@@ -40,12 +40,22 @@ Configurar o webpack e o babel:
         <title>ReactJS</title>
       </head>
       <body>
-        <h1>Hello world</h1>
+        <div id="app"></div>
 
         <script src="./bundle.js"></script>
       </body>
       </html>
-  Criar o arquivo index.js dentro da pasta src:
+  Criar o arquivo index.js dentro da pasta src e incluir o seguinte código:
+    import React from 'react';
+    import { render} from 'react-dom';
+
+    import App from './App';
+    import './App.css';
+
+    render(<App />, document.getElementById('app'));
+    
+  Instalar os seguintes loadres:
+    yarn add style-loader css-loader -D
   Inclur o seguinte código no arquivo webpack.config.js:
     const path = require('path');
 
@@ -64,6 +74,13 @@ Configurar o webpack e o babel:
             test: /\.js$/,
             exclude: /node_modules/,
             use: 'babel-loader'
+          },
+          {
+            test: /\.css$/,
+            use: [
+              { loader: 'style-loader' },
+              { loader: 'css-loader' }
+            ]
           }
         ]
       }
