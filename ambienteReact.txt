@@ -1,0 +1,79 @@
+Criar a pasta do projeto:
+  mkdir <nomeDoProjeto>
+Entrar na pasta do projeto:
+  cd <nomeDoProjeto>
+Executar o comando para iniciar o projeto:
+  yarn init -y
+Abrir o vs code a partir da pasta do projeto:
+  code .
+Com o vs code aberto, it no terminal do vs code e executar os seguintes comandos:
+  Para instalar o Babel que é um transpilador de código
+    yarn add @babel/core -D
+    yarn add @babel/preset-env -D
+    yarn add @babel/preset-react -D
+    yarn add webpack -D
+    yarn add webpack-cli -D
+  ou
+    yarn add @babel/core @babel/preset-env @babel/preset-react webpack webpack-cli -D
+Instalar o React e React-Dom
+  yarn add react react-dom
+Configurar o webpack e o babel:
+  Criar arquivo babel.config.js na pasta raiz do projeto e incluir o seguinte código:
+    module.exports = {
+      presets: [
+        "@babel/preset-env",
+        "@babel/preset-react"
+      ]
+    };
+  Instalar o babel loader com o seguinte comando:
+    yarn add babel-loader -D
+  Criar o arquivo chamado webpak.config.js na pasta raiz do projeto:
+  Criar a pasta src na raiz do projeto:
+  Criar a pasta public na raiz do projeto:
+    criar o arquivo index.html e incluir o seguinte código:
+      <!DOCTYPE html>
+      <html lang="en">
+      <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>ReactJS</title>
+      </head>
+      <body>
+        <h1>Hello world</h1>
+
+        <script src="./bundle.js"></script>
+      </body>
+      </html>
+  Criar o arquivo index.js dentro da pasta src:
+  Inclur o seguinte código no arquivo webpack.config.js:
+    const path = require('path');
+
+    module.exports = {
+      entry: path.resolve(__dirname, 'src', 'index.js'),
+      output: {
+        path: path.resolve(__dirname, 'public'),
+        filename: 'bundle.js' 
+      },
+      devServer: {
+        contentBase: path.resolve(__dirname, 'public')
+      },
+      module: {
+        rules: [
+          {
+            test: /\.js$/,
+            exclude: /node_modules/,
+            use: 'babel-loader'
+          }
+        ]
+      }
+    }
+Abritro arquivo package.json e incluir os seguites scripts:
+  "scripts": {
+    "build": "webpack --mode development",
+    "dev": "webpack-dev-server --mode development"   
+  },
+Instalar a biblioteca de auto load da aplicação:
+  yarn add webpack-dev-server -D
+  
+
