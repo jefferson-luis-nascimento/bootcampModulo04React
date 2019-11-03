@@ -92,5 +92,16 @@ Abritro arquivo package.json e incluir os seguites scripts:
   },
 Instalar a biblioteca de auto load da aplicação:
   yarn add webpack-dev-server -D
+Instalar o plugin do babel para permitir incluir o state direto na classe:
+  yarn add @babel/plugin-proposal-class-properties -D
+Incluir o seguinte código no arquivo babel.config.js:
+  ,
+  plugins: [
+    '@babel/plugin-proposal-class-properties'
+  ]
+Instalar o seguinte componente:
+  yarn add prop-types
+  
+
   
 
