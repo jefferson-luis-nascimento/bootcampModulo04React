@@ -29,6 +29,7 @@ Configurar o webpack e o babel:
     yarn add babel-loader -D
   Criar o arquivo chamado webpak.config.js na pasta raiz do projeto:
   Criar a pasta src na raiz do projeto:
+    Criar a pasta assets dentro da pasta src
   Criar a pasta public na raiz do projeto:
     criar o arquivo index.html e incluir o seguinte código:
       <!DOCTYPE html>
@@ -67,6 +68,7 @@ Configurar o webpack e o babel:
     
   Instalar os seguintes loaders:
     yarn add style-loader css-loader -D
+    yarn add file-loader -D 
   Inclur o seguinte código no arquivo webpack.config.js:
     const path = require('path');
 
@@ -92,6 +94,10 @@ Configurar o webpack e o babel:
               { loader: 'style-loader' },
               { loader: 'css-loader' }
             ]
+          },
+          {
+            test: /\.*\.(gif|png|jpe?g)$/i,
+            use: { loader: 'file-loader' }
           }
         ]
       }
