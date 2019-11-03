@@ -65,7 +65,7 @@ Configurar o webpack e o babel:
 
     render(<App />, document.getElementById('app'));
     
-  Instalar os seguintes loadres:
+  Instalar os seguintes loaders:
     yarn add style-loader css-loader -D
   Inclur o seguinte código no arquivo webpack.config.js:
     const path = require('path');
@@ -96,7 +96,7 @@ Configurar o webpack e o babel:
         ]
       }
     }
-Abritro arquivo package.json e incluir os seguites scripts:
+Abrir o arquivo package.json e incluir os seguites scripts:
   "scripts": {
     "build": "webpack --mode development",
     "dev": "webpack-dev-server --mode development"   
