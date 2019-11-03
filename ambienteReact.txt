@@ -6,7 +6,7 @@ Executar o comando para iniciar o projeto:
   yarn init -y
 Abrir o vs code a partir da pasta do projeto:
   code .
-Com o vs code aberto, it no terminal do vs code e executar os seguintes comandos:
+Com o vs code aberto, ir no terminal do vs code e executar os seguintes comandos:
   Para instalar o Babel que é um transpilador de código
     yarn add @babel/core -D
     yarn add @babel/preset-env -D
@@ -45,6 +45,17 @@ Configurar o webpack e o babel:
         <script src="./bundle.js"></script>
       </body>
       </html>
+  Criar o arquivo App.js na pasta src e incluir o seguinte código:
+    import React from 'react';
+
+    import './App.css';
+
+    function App() {
+      return <div>Hello World</div>
+    }
+
+    export default App;
+  Criar o arquivo App.css na pasta src:
   Criar o arquivo index.js dentro da pasta src e incluir o seguinte código:
     import React from 'react';
     import { render} from 'react-dom';
